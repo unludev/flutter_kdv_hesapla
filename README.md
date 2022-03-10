@@ -1,16 +1,6 @@
-# calculate_tip
+# kdv hesaplama uygulamasi
 
-A new Flutter project.
 
-## Getting Started
 
-This project is a starting point for a Flutter application.
 
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+![app](https://user-images.githubusercontent.com/38860392/157766068-58c8982c-8a17-4bc8-8bd6-add4c73e185b.png)
