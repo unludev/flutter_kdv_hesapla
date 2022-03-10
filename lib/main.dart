@@ -18,52 +18,54 @@ class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+        debugShowCheckedModeBanner: false,
         home: Scaffold(
-      body: Center(
-          child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          if (tax != null)
-            Padding(
-              padding: EdgeInsets.all(20),
-              child: Text(
-                '$tax',
-                style: TextStyle(fontSize: 30),
+          body: Center(
+              child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              if (tax != null)
+                Padding(
+                  padding: EdgeInsets.all(20),
+                  child: Text(
+                    '$tax',
+                    style: TextStyle(fontSize: 30),
+                  ),
+                ),
+              Text(
+                'Toplam Tutar',
               ),
-            ),
-          Text(
-            'Toplam Tutar',
-          ),
-          SizedBox(
-            width: 70,
-            child: TextField(
-              controller: controller,
-              textAlign: TextAlign.center,
-              decoration: InputDecoration(
-                hintText: '₺100.00',
+              SizedBox(
+                width: 70,
+                child: TextField(
+                  controller: controller,
+                  textAlign: TextAlign.center,
+                  decoration: InputDecoration(
+                    hintText: '₺100.00',
+                  ),
+                  keyboardType: TextInputType.numberWithOptions(decimal: true),
+                ),
               ),
-              keyboardType: TextInputType.numberWithOptions(decimal: true),
-            ),
-          ),
-          Padding(
-            padding: const EdgeInsets.all(20.0),
-            child: ToggleButtons(children: [
-              Text('%18'),
-              Text('%8'),
-              Text('%1'),
-            ], isSelected: _selection, onPressed: updateSelection),
-          ),
-          TextButton(
-            onPressed: calculateTax,
-            child: Text('Vergi Hesapla'),
-            style: ButtonStyle(
-                backgroundColor: MaterialStateProperty.all<Color>(Colors.green),
-                foregroundColor:
-                    MaterialStateProperty.all<Color>(Colors.white)),
-          ),
-        ],
-      )),
-    ));
+              Padding(
+                padding: const EdgeInsets.all(20.0),
+                child: ToggleButtons(children: [
+                  Text('%18'),
+                  Text('%8'),
+                  Text('%1'),
+                ], isSelected: _selection, onPressed: updateSelection),
+              ),
+              TextButton(
+                onPressed: calculateTax,
+                child: Text('Vergi Hesapla'),
+                style: ButtonStyle(
+                    backgroundColor:
+                        MaterialStateProperty.all<Color>(Colors.green),
+                    foregroundColor:
+                        MaterialStateProperty.all<Color>(Colors.white)),
+              ),
+            ],
+          )),
+        ));
   }
 
   void updateSelection(int selectedIndex) {
